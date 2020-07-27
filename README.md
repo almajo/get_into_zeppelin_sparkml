@@ -18,14 +18,14 @@ As I am working on a Fedora 31 workstation, I used Podman over Docker because it
 
 The zeppelin notebook can be started with:
 
-'''sh
-podman run -p 8080:8080 --rm --name zeppelin apach/zeppelin:0.9.0
-'''
+```bash
+podman run -p 8080:8080 --rm --name zeppelin apache/zeppelin:0.9.0
+```
 
 or to directly load the notebook inside:
 
-'''sh
-podman run -p 8080:8080 --rm -v $PWD/notebook:/notebook -e ZEPPELIN_NOTEBOOK_DIR=/notebook --name zeppelin apach/zeppelin:0.9.0
-'''
+```bash
+podman run -p 8080:8080 --rm -v $PWD/notebook:/notebook -e ZEPPELIN_NOTEBOOK_DIR=/notebook --name zeppelin apache/zeppelin:0.9.0
+```
 
 However sometimes there are permission errors when mounting a volume into the container. Then you could choose the first version and simply import the notebook file via the gui.
